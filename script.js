@@ -66,31 +66,29 @@ function navbarAnimation() {
 navbarAnimation();
 
 // VideoCon Hover Animation
-function videoConAnimation() {
-  let videoCon = document.querySelector("#video-container");
-  let playbtn = document.querySelector("#play");
-  videoCon.addEventListener("mouseenter", function () {
+function videoconAnimation() {
+  var videocon = document.querySelector("#video-container");
+  var playbtn = document.querySelector("#play");
+  videocon.addEventListener("mouseenter", function () {
     gsap.to(playbtn, {
       scale: 1,
       opacity: 1,
     });
   });
-
-  videoCon.addEventListener("mouseleave", function () {
+  videocon.addEventListener("mouseleave", function () {
     gsap.to(playbtn, {
       scale: 0,
       opacity: 0,
     });
   });
-
-  videoCon.addEventListener("mousemove", function (event) {
+  document.addEventListener("mousemove", function (dets) {
     gsap.to(playbtn, {
-      left: event.clientX - 50,
-      top: event.clientY - 50,
+      left: dets.x - 70,
+      top: dets.y - 80,
     });
   });
 }
-videoConAnimation();
+videoconAnimation();
 
 // h1 Loading Animation
 function loadingAnimation() {
